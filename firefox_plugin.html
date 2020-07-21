@@ -1,0 +1,601 @@
+<html>
+    <head>
+        <title>Firefox plugin</title>
+        <script>
+            window.onload = function () {
+                document.querySelectorAll('.changehistory>table').forEach(function(table) {
+                    var activityNameNode = table.querySelector('td.activity-name');
+                    if(activityNameNode && activityNameNode.textContent.trim().toLowerCase() === 'description') { 
+                        var button = document.createElement('button');
+                        button.textContent = 'clickl';
+                        button.addEventListener("click", function(e){
+                            e.stopPropagation();
+                            e.preventDefault();
+                            alert('jh');
+                        });
+                        activityNameNode.appendChild(button);
+                    }
+                    
+                    
+                });
+
+            };
+        </script>
+    </head>
+    <body>
+        <div id="jira_part">
+            <div class="changehistory action-body">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" id="changehistory_959491">
+                    <tbody>
+                        <tr>
+                            <td width="20%" class="activity-name">
+                                Description
+                            </td>
+                            <td width="40%" class="activity-old-val">
+                                *Context*
+                                <br>
+                                &nbsp;* Zie Epic Digitale toegankelijkheid. Hierin staan ook links naar al eerder gedaan uitzoekwerk.
+                                <br>
+                                &nbsp;* In brainstormsessie van 29-4-2020 is besproken dat voor Politiek Portaal het onderwerp Digitale Toegankelijkheid 2020 per pagina wordt opgepakt en niet per richtlijn. Reden hiervoor is dat de richtlijnen, IT technisch gezien, veel met elkaar te maken hebben.
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                *Voorbeelden:*&nbsp;
+                                <br>
+
+                                <br>
+                                Let erop dat er verschillende views zijn voor deze pagina:&nbsp;
+                                <br>
+                                &nbsp;# De geplande agenda:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020/preagenda">https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020/preagenda</a>]
+                                <br>
+                                &nbsp;# De chronologische agenda:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020">https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020</a>]
+                                <br>
+                                &nbsp;# De besluitenlijst:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/besluitenlijst/273682/Besluitenlijst%3A%20Gemeenteraad%20-%20Ketentest%2011-05-2020">https://demo2.notubiz.accept.mybit.nl/besluitenlijst/273682/Besluitenlijst%3A%20Gemeenteraad%20-%20Ketentest%2011-05-2020</a>]
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                Let ook op dat de volgende onderdelen op deze pagina erbij horen
+                                <br>
+                                &nbsp;# Evenement met media en sprekersindexeringen:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020">https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020</a>]
+                                <br>
+                                &nbsp;# Evenement zonder media:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273530/Test%3A%20Digitaal%20stemmen%2002-04-2020">https://demo2.notubiz.accept.mybit.nl/vergadering/273530/Test%3A%20Digitaal%20stemmen%2002-04-2020</a>]
+                                <br>
+                                &nbsp;# Digitaal stemmen: [<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020">https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020</a>]
+                                <br>
+                                &nbsp;# Stemmingen:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273530/Test%3A%20Digitaal%20stemmen%2002-04-2020">https://demo2.notubiz.accept.mybit.nl/vergadering/273530/Test%3A%20Digitaal%20stemmen%2002-04-2020</a>]
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                *User Story*
+                                <br>
+
+                                <br>
+                                *Als*&nbsp;NotuBiz
+                                <br>
+
+                                <br>
+                                *Wil ik*&nbsp;dat de evenementen pagina's van Politiek Portaal die toegankelijk is voor het publiek wordt aangepast aan de eisen van digitale toegankelijkheid
+                                <br>
+
+                                <br>
+                                *Zodat*&nbsp;wij&nbsp;voldoen aan de wettelijke eisen en het voor de gebruiker makkelijk toegankelijk is
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                *Acceptatiecriteria*
+                                <br>
+
+                                <br>
+                                De evenementen die je als burger zijnde in kan zien in het Politiek Portaal (je hoeft zodoende niet ingelogd te zijn) moet aan de volgende criteria voldoen:
+                                <br>
+
+                                <br>
+                                Zowel de pagina's:&nbsp;
+                                <br>
+                                &nbsp;* Geplande agenda
+                                <br>
+                                &nbsp;* Chronologische agenda
+                                <br>
+                                &nbsp;* Besluitenlijst
+                                <br>
+
+                                <br>
+                                +Principe waarneembaar+
+                                <br>
+                                &nbsp;* Richtlijn&nbsp;1.1.1 - Niet tekstuele content (A)
+                                <br>
+                                &nbsp;** Voor verschillende iconen en vormen van grafische weergave wordt geen tekstalternatief geboden waardoor iemand met een voorleesprogramma niet meekrijgt welke informatie wordt geboden.&nbsp;&nbsp;(een 'alt' tekst in de code is nodig)
+                                <br>
+                                &nbsp;* &nbsp;Richtlijn 1.3.1 - Info en relaties (A) icm een Voorleestool
+                                <br>
+                                &nbsp;** Verschillende gevallen waar visuele structuur niet wordt aangegeven in tekst die door voorleessoftware geïnterpreteerd kan worden, waardoor informatie die visueel wordt weergegeven voor blinde gebruikers verloren gaat. Bijvoorbeeld radiobuttons en de tabel in het dashboard. Actie @Mariska Petray: contact opnemen met voorleessoftware Readspeaker :&nbsp;[<a href="https://www.readspeaker.com/nl/solutions/tekst-naar-spraak-voor-online-lezen/readspeaker-webreader/">https://www.readspeaker.com/nl/solutions/tekst-naar-spraak-voor-online-lezen/readspeaker-webreader/</a>]
+                                <br>
+                                &nbsp;* Richtlijn 1.4.4 - Herschalen van tekst (AA)
+                                <br>
+                                &nbsp;** Inzoomen op de pagina tot 200% leidt op verschillende pagina's tot tekst die buiten beeld verdwijnt. Het inzoomen tot 200% zou mogelijk moeten zijn zonder verlies van content of functionaliteit.
+                                <br>
+                                &nbsp;NB: Focus op wat mogelijk is. Indien eea niet realistisch is om te implementeren, andere opties bespreken.
+                                <br>
+
+                                <br>
+                                +Principe Bedienbaar+
+                                <br>
+                                &nbsp;* Middels de 'tab' functie kan een gebruiker door alle functionaliteiten op de pagina genavigeerd kan worden.&nbsp;
+                                <br>
+                                &nbsp;* De 'tab' functie heeft een logische volgorde van navigeren, zodat de gebruiker op een gemakkelijke manier door Politiek Portaal kan navigeren. Dit zonder dat de gebruiker hoeft te zoeken op welke manier hij/zij bepaalde informatie kan openen of functionaliteiten kan bedienen.&nbsp;
+                                <br>
+                                &nbsp;* Duidelijk maken&nbsp;welke focus de 'tab' functionaliteit heeft, zodat een gebruiker op een gebruiksvriendelijke manier door de pagina kan navigeren.
+                                <br>
+                                &nbsp;* Richtlijn 2.1.1 - Toetsenbord
+                                <br>
+                                &nbsp;** Verschillende functionaliteiten op onze pagina's kunnen niet met het toetsenbord bediend worden. Voorbeelden zijn het openen van zoekresultaten en het in- en uitklappen van agendapunten in het digitaal verslag.
+                                <br>
+                                &nbsp;* Richtlijn&nbsp;2.1.2 - Geen toetsenbordval (A)
+                                <br>
+                                &nbsp;** Gebruikers moeten zonder de muis in staat zijn om de pagina te bedienen middels de 'tab' functie. Deze 'tab' functie werkt in Politiek Portaal, maar op enkele plekken wordt de gebruiker verhinderd om van de ene naar de andere knop te bewegen met gebruik van het toetsenbord.
+                                <br>
+
+                                <br>
+                                &nbsp;* Richtlijn 2.4.3 - Focus volgorde (A)
+                                <br>
+                                &nbsp;** Wanneer de pagina middels de 'tab' functie bediend wordt, is de focus volgorde van het bedienen van de knoppen niet altijd logisch. Wanneer bijvoorbeeld het menu onder de knop 'Documenten' geopend is, springt de focus niet eerst naar de onderliggende menukeuze, maar is de focus eerst op andere knoppen binnen Politiek Portaal, waarna de gebruiker middels de 'tab' functie alsnog uitkomt bij de onderdelen uit het menu.
+                                <br>
+
+                                <br>
+                                &nbsp;* Richtlijn 2.4.7 - Focus zichtbaar (AA)
+                                <br>
+                                &nbsp;** Bij het navigeren met de 'tab' functie is op enkele plekken in Politiek Portaal niet zichtbaar op welke knop de focus ligt. Hierdoor ziet een gebruiker niet altijd goed welke knop hij/zij op dat moment bedient. Het tonen van de focus vergroot de gebruiksvriendelijkheid voor alle gebruikers die middels een toetsenbord door de pagina navigeren.
+                                <br>
+
+                                <br>
+                                +Principe Robuust+
+                                <br>
+                                &nbsp;* Richtlijn 4.1.2 - Naam, rol, waarde (A)
+                                <br>
+                                &nbsp;** Deze richtlijn gaat over of het duidelijk is wat de status is van bepaalde ingestelde waarden op de pagina's. Op onze pagina's wordt vaak de status van een toggle niet tekstueel aangegeven. Voorbeelden zijn of iets in- of uitgeklapt is, of recent/toekomst getoond wordt, of het aangeven welke pagina binnen de pagination in het module overzichtsscherm getoond wordt. Op onze pagina's zijn veel gevallen van het niet voldoen aan deze richtlijn.
+                            </td>
+                            <td width="40%" class="activity-new-val">
+                                *Context*
+                                <br>
+                                &nbsp;* Zie Epic Digitale toegankelijkheid. Hierin staan ook links naar al eerder gedaan uitzoekwerk.
+                                <br>
+                                &nbsp;* In brainstormsessie van 29-4-2020 is besproken dat voor Politiek Portaal het onderwerp Digitale Toegankelijkheid 2020 per pagina wordt opgepakt en niet per richtlijn. Reden hiervoor is dat de richtlijnen, IT technisch gezien, veel met elkaar te maken hebben.
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                *Voorbeelden:*&nbsp;
+                                <br>
+
+                                <br>
+                                Let erop dat er verschillende views zijn voor deze pagina:&nbsp;
+                                <br>
+                                &nbsp;# De geplande agenda:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020/preagenda">https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020/preagenda</a>]
+                                <br>
+                                &nbsp;# De chronologische agenda:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020">https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020</a>]
+                                <br>
+                                &nbsp;# De besluitenlijst:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/besluitenlijst/273682/Besluitenlijst%3A%20Gemeenteraad%20-%20Ketentest%2011-05-2020">https://demo2.notubiz.accept.mybit.nl/besluitenlijst/273682/Besluitenlijst%3A%20Gemeenteraad%20-%20Ketentest%2011-05-2020</a>]
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                Let ook op dat de volgende onderdelen op deze pagina erbij horen
+                                <br>
+                                &nbsp;# Evenement met media en sprekersindexeringen:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020">https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020</a>]
+                                <br>
+                                &nbsp;# Evenement zonder media:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273530/Test%3A%20Digitaal%20stemmen%2002-04-2020">https://demo2.notubiz.accept.mybit.nl/vergadering/273530/Test%3A%20Digitaal%20stemmen%2002-04-2020</a>]
+                                <br>
+                                &nbsp;# Digitaal stemmen: [<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020">https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020</a>]
+                                <br>
+                                &nbsp;# Stemmingen:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273530/Test%3A%20Digitaal%20stemmen%2002-04-2020">https://demo2.notubiz.accept.mybit.nl/vergadering/273530/Test%3A%20Digitaal%20stemmen%2002-04-2020</a>]
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                Aantal voorbeelden van klanten:&nbsp;
+                                <br>
+                                &nbsp;* [<a href="https://amersfoort.notubiz.nl/vergadering/690216/Het%20Besluit">https://amersfoort.notubiz.nl/vergadering/690216/Het%20Besluit</a>]
+                                <br>
+                                &nbsp;* [<a href="https://rotterdam.notubiz.nl/vergadering/686501/Gemeenteraad%2023-04-2020">https://rotterdam.notubiz.nl/vergadering/686501/Gemeenteraad%2023-04-2020</a>]&nbsp;
+                                <br>
+                                &nbsp;* [<a href="https://amsterdam.notubiz.nl/vergadering/673534/RAAD%2022-01-2020">https://amsterdam.notubiz.nl/vergadering/673534/RAAD%2022-01-2020</a>]&nbsp;
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                *User Story*
+                                <br>
+
+                                <br>
+                                *Als*&nbsp;NotuBiz
+                                <br>
+
+                                <br>
+                                *Wil ik*&nbsp;dat de evenementen pagina's van Politiek Portaal die toegankelijk is voor het publiek wordt aangepast aan de eisen van digitale toegankelijkheid
+                                <br>
+
+                                <br>
+                                *Zodat*&nbsp;wij&nbsp;voldoen aan de wettelijke eisen en het voor de gebruiker makkelijk toegankelijk is
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                *Acceptatiecriteria*
+                                <br>
+
+                                <br>
+                                De evenementen die je als burger zijnde in kan zien in het Politiek Portaal (je hoeft zodoende niet ingelogd te zijn) moet aan de volgende criteria voldoen:
+                                <br>
+
+                                <br>
+                                Zowel de pagina's:&nbsp;
+                                <br>
+                                &nbsp;* Geplande agenda
+                                <br>
+                                &nbsp;* Chronologische agenda
+                                <br>
+                                &nbsp;* Besluitenlijst
+                                <br>
+
+                                <br>
+                                +Principe waarneembaar+
+                                <br>
+                                &nbsp;* Richtlijn&nbsp;1.1.1 - Niet tekstuele content (A)
+                                <br>
+                                &nbsp;** Voor verschillende iconen en vormen van grafische weergave wordt geen tekstalternatief geboden waardoor iemand met een voorleesprogramma niet meekrijgt welke informatie wordt geboden.&nbsp;&nbsp;(een 'alt' tekst in de code is nodig)
+                                <br>
+                                &nbsp;* &nbsp;Richtlijn 1.3.1 - Info en relaties (A) icm een Voorleestool
+                                <br>
+                                &nbsp;** Verschillende gevallen waar visuele structuur niet wordt aangegeven in tekst die door voorleessoftware geïnterpreteerd kan worden, waardoor informatie die visueel wordt weergegeven voor blinde gebruikers verloren gaat. Bijvoorbeeld radiobuttons en de tabel in het dashboard. Actie @Mariska Petray: contact opnemen met voorleessoftware Readspeaker :&nbsp;[<a href="https://www.readspeaker.com/nl/solutions/tekst-naar-spraak-voor-online-lezen/readspeaker-webreader/">https://www.readspeaker.com/nl/solutions/tekst-naar-spraak-voor-online-lezen/readspeaker-webreader/</a>]
+                                <br>
+                                &nbsp;* Richtlijn 1.4.4 - Herschalen van tekst (AA)
+                                <br>
+                                &nbsp;** Inzoomen op de pagina tot 200% leidt op verschillende pagina's tot tekst die buiten beeld verdwijnt. Het inzoomen tot 200% zou mogelijk moeten zijn zonder verlies van content of functionaliteit.
+                                <br>
+                                &nbsp;NB: Focus op wat mogelijk is. Indien eea niet realistisch is om te implementeren, andere opties bespreken.
+                                <br>
+
+                                <br>
+                                +Principe Bedienbaar+
+                                <br>
+                                &nbsp;* Middels de 'tab' functie kan een gebruiker door alle functionaliteiten op de pagina genavigeerd kan worden.&nbsp;
+                                <br>
+                                &nbsp;* De 'tab' functie heeft een logische volgorde van navigeren, zodat de gebruiker op een gemakkelijke manier door Politiek Portaal kan navigeren. Dit zonder dat de gebruiker hoeft te zoeken op welke manier hij/zij bepaalde informatie kan openen of functionaliteiten kan bedienen.&nbsp;
+                                <br>
+                                &nbsp;* Duidelijk maken&nbsp;welke focus de 'tab' functionaliteit heeft, zodat een gebruiker op een gebruiksvriendelijke manier door de pagina kan navigeren.
+                                <br>
+                                &nbsp;* Richtlijn 2.1.1 - Toetsenbord
+                                <br>
+                                &nbsp;** Verschillende functionaliteiten op onze pagina's kunnen niet met het toetsenbord bediend worden. Voorbeelden zijn het openen van zoekresultaten en het in- en uitklappen van agendapunten in het digitaal verslag.
+                                <br>
+                                &nbsp;* Richtlijn&nbsp;2.1.2 - Geen toetsenbordval (A)
+                                <br>
+                                &nbsp;** Gebruikers moeten zonder de muis in staat zijn om de pagina te bedienen middels de 'tab' functie. Deze 'tab' functie werkt in Politiek Portaal, maar op enkele plekken wordt de gebruiker verhinderd om van de ene naar de andere knop te bewegen met gebruik van het toetsenbord.
+                                <br>
+
+                                <br>
+                                &nbsp;* Richtlijn 2.4.3 - Focus volgorde (A)
+                                <br>
+                                &nbsp;** Wanneer de pagina middels de 'tab' functie bediend wordt, is de focus volgorde van het bedienen van de knoppen niet altijd logisch. Wanneer bijvoorbeeld het menu onder de knop 'Documenten' geopend is, springt de focus niet eerst naar de onderliggende menukeuze, maar is de focus eerst op andere knoppen binnen Politiek Portaal, waarna de gebruiker middels de 'tab' functie alsnog uitkomt bij de onderdelen uit het menu.
+                                <br>
+
+                                <br>
+                                &nbsp;* Richtlijn 2.4.7 - Focus zichtbaar (AA)
+                                <br>
+                                &nbsp;** Bij het navigeren met de 'tab' functie is op enkele plekken in Politiek Portaal niet zichtbaar op welke knop de focus ligt. Hierdoor ziet een gebruiker niet altijd goed welke knop hij/zij op dat moment bedient. Het tonen van de focus vergroot de gebruiksvriendelijkheid voor alle gebruikers die middels een toetsenbord door de pagina navigeren.
+                                <br>
+
+                                <br>
+                                +Principe Robuust+
+                                <br>
+                                &nbsp;* Richtlijn 4.1.2 - Naam, rol, waarde (A)
+                                <br>
+                                &nbsp;** Deze richtlijn gaat over of het duidelijk is wat de status is van bepaalde ingestelde waarden op de pagina's. Op onze pagina's wordt vaak de status van een toggle niet tekstueel aangegeven. Voorbeelden zijn of iets in- of uitgeklapt is, of recent/toekomst getoond wordt, of het aangeven welke pagina binnen de pagination in het module overzichtsscherm getoond wordt. Op onze pagina's zijn veel gevallen van het niet voldoen aan deze richtlijn.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="changehistory action-body">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" id="changehistory_959489">
+                    <tbody>
+                        <tr>
+                            <td width="20%" class="activity-name">
+                                Description
+                            </td>
+                            <td width="40%" class="activity-old-val">
+                                *Context*
+                                <br>
+                                &nbsp;* Zie Epic Digitale toegankelijkheid. Hierin staan ook links naar al eerder gedaan uitzoekwerk.
+                                <br>
+                                &nbsp;* In brainstormsessie van 29-4-2020 is besproken dat voor Politiek Portaal het onderwerp Digitale Toegankelijkheid 2020 per pagina wordt opgepakt en niet per richtlijn. Reden hiervoor is dat de richtlijnen, IT technisch gezien, veel met elkaar te maken hebben.
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                *Voorbeelden:*&nbsp;
+                                <br>
+
+                                <br>
+                                Let erop dat alle Dynamische Lijstmodules onder dit ticket vallen en getest moeten worden
+                                <br>
+
+                                <br>
+                                Let erop dat het zowel om de overzichtspagina gaat als de detail-pagina van een module-item. Voorbeeld:&nbsp;
+                                <br>
+                                &nbsp;* [<a href="https://demo2.notubiz.accept.mybit.nl/modules/4/schriftelijke_vragen/view">https://demo2.notubiz.accept.mybit.nl/modules/4/schriftelijke_vragen/view</a>]
+                                <br>
+                                &nbsp;* [<a href="https://demo2.notubiz.accept.mybit.nl/modules/4/Schriftelijke%20vragen/102922">https://demo2.notubiz.accept.mybit.nl/modules/4/Schriftelijke%20vragen/102922</a>]
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                *User Story*
+                                <br>
+
+                                <br>
+                                *Als*&nbsp;NotuBiz
+                                <br>
+
+                                <br>
+                                *Wil ik*&nbsp;dat de dynamische lijstmodules zonder Documenten van Politiek Portaal die toegankelijk is voor het publiek wordt aangepast aan de eisen van digitale toegankelijkheid
+                                <br>
+
+                                <br>
+                                *Zodat*&nbsp;wij&nbsp;voldoen aan de wettelijke eisen en het voor de gebruiker makkelijk toegankelijk is
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                *Acceptatiecriteria*
+                                <br>
+
+                                <br>
+                                De dynamische lijstmodules die je als burger zijnde in kan zien in het Politiek Portaal (je hoeft zodoende niet ingelogd te zijn) moet aan de volgende criteria voldoen:
+                                <br>
+                                &nbsp;* Zowel de lijstmodule overzichtspagina
+                                <br>
+                                &nbsp;* De lijstmodule-detail pagina
+                                <br>
+
+                                <br>
+                                +Principe waarneembaar+
+                                <br>
+                                &nbsp;* Richtlijn&nbsp;1.1.1 - Niet tekstuele content (A)
+                                <br>
+                                &nbsp;** Voor verschillende iconen en vormen van grafische weergave wordt geen tekstalternatief geboden waardoor iemand met een voorleesprogramma niet meekrijgt welke informatie wordt geboden.&nbsp;&nbsp;(een 'alt' tekst in de code is nodig)
+                                <br>
+                                &nbsp;* &nbsp;Richtlijn 1.3.1 - Info en relaties (A) icm een Voorleestool
+                                <br>
+                                &nbsp;** Verschillende gevallen waar visuele structuur niet wordt aangegeven in tekst die door voorleessoftware geïnterpreteerd kan worden, waardoor informatie die visueel wordt weergegeven voor blinde gebruikers verloren gaat. Bijvoorbeeld radiobuttons en de tabel in het dashboard. Actie @Mariska Petray: contact opnemen met voorleessoftware Readspeaker :&nbsp;[<a href="https://www.readspeaker.com/nl/solutions/tekst-naar-spraak-voor-online-lezen/readspeaker-webreader/">https://www.readspeaker.com/nl/solutions/tekst-naar-spraak-voor-online-lezen/readspeaker-webreader/</a>]
+                                <br>
+                                &nbsp;* Richtlijn 1.4.4 - Herschalen van tekst (AA)
+                                <br>
+                                &nbsp;** Inzoomen op de pagina tot 200% leidt op verschillende pagina's tot tekst die buiten beeld verdwijnt. Het inzoomen tot 200% zou mogelijk moeten zijn zonder verlies van content of functionaliteit.
+                                <br>
+                                &nbsp;NB: Focus op wat mogelijk is. Indien eea niet realistisch is om te implementeren, andere opties bespreken.
+                                <br>
+
+                                <br>
+                                +Principe Bedienbaar+
+                                <br>
+                                &nbsp;* Middels de 'tab' functie kan een gebruiker door alle functionaliteiten op de pagina genavigeerd kan worden.&nbsp;
+                                <br>
+                                &nbsp;* De 'tab' functie heeft een logische volgorde van navigeren, zodat de gebruiker op een gemakkelijke manier door Politiek Portaal kan navigeren. Dit zonder dat de gebruiker hoeft te zoeken op welke manier hij/zij bepaalde informatie kan openen of functionaliteiten kan bedienen.&nbsp;
+                                <br>
+                                &nbsp;* Duidelijk maken&nbsp;welke focus de 'tab' functionaliteit heeft, zodat een gebruiker op een gebruiksvriendelijke manier door de pagina kan navigeren.
+                                <br>
+                                &nbsp;* Richtlijn 2.1.1 - Toetsenbord
+                                <br>
+                                &nbsp;** Verschillende functionaliteiten op onze pagina's kunnen niet met het toetsenbord bediend worden. Voorbeelden zijn het openen van zoekresultaten en het in- en uitklappen van agendapunten in het digitaal verslag.
+                                <br>
+                                &nbsp;* Richtlijn&nbsp;2.1.2 - Geen toetsenbordval (A)
+                                <br>
+                                &nbsp;** Gebruikers moeten zonder de muis in staat zijn om de pagina te bedienen middels de 'tab' functie. Deze 'tab' functie werkt in Politiek Portaal, maar op enkele plekken wordt de gebruiker verhinderd om van de ene naar de andere knop te bewegen met gebruik van het toetsenbord.
+                                <br>
+
+                                <br>
+                                &nbsp;* Richtlijn 2.4.3 - Focus volgorde (A)
+                                <br>
+                                &nbsp;** Wanneer de pagina middels de 'tab' functie bediend wordt, is de focus volgorde van het bedienen van de knoppen niet altijd logisch. Wanneer bijvoorbeeld het menu onder de knop 'Documenten' geopend is, springt de focus niet eerst naar de onderliggende menukeuze, maar is de focus eerst op andere knoppen binnen Politiek Portaal, waarna de gebruiker middels de 'tab' functie alsnog uitkomt bij de onderdelen uit het menu.
+                                <br>
+
+                                <br>
+                                &nbsp;* Richtlijn 2.4.7 - Focus zichtbaar (AA)
+                                <br>
+                                &nbsp;** Bij het navigeren met de 'tab' functie is op enkele plekken in Politiek Portaal niet zichtbaar op welke knop de focus ligt. Hierdoor ziet een gebruiker niet altijd goed welke knop hij/zij op dat moment bedient. Het tonen van de focus vergroot de gebruiksvriendelijkheid voor alle gebruikers die middels een toetsenbord door de pagina navigeren.
+                                <br>
+
+                                <br>
+                                +Principe Robuust+
+                                <br>
+                                &nbsp;* Richtlijn 4.1.2 - Naam, rol, waarde (A)
+                                <br>
+                                &nbsp;** Deze richtlijn gaat over of het duidelijk is wat de status is van bepaalde ingestelde waarden op de pagina's. Op onze pagina's wordt vaak de status van een toggle niet tekstueel aangegeven. Voorbeelden zijn of iets in- of uitgeklapt is, of recent/toekomst getoond wordt, of het aangeven welke pagina binnen de pagination in het module overzichtsscherm getoond wordt. Op onze pagina's zijn veel gevallen van het niet voldoen aan deze richtlijn.
+                            </td>
+                            <td width="40%" class="activity-new-val">
+                                *Context*
+                                <br>
+                                &nbsp;* Zie Epic Digitale toegankelijkheid. Hierin staan ook links naar al eerder gedaan uitzoekwerk.
+                                <br>
+                                &nbsp;* In brainstormsessie van 29-4-2020 is besproken dat voor Politiek Portaal het onderwerp Digitale Toegankelijkheid 2020 per pagina wordt opgepakt en niet per richtlijn. Reden hiervoor is dat de richtlijnen, IT technisch gezien, veel met elkaar te maken hebben.
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                *Voorbeelden:*&nbsp;
+                                <br>
+
+                                <br>
+                                Let erop dat er verschillende views zijn voor deze pagina:&nbsp;
+                                <br>
+                                &nbsp;# De geplande agenda:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020/preagenda">https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020/preagenda</a>]
+                                <br>
+                                &nbsp;# De chronologische agenda:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020">https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020</a>]
+                                <br>
+                                &nbsp;# De besluitenlijst:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/besluitenlijst/273682/Besluitenlijst%3A%20Gemeenteraad%20-%20Ketentest%2011-05-2020">https://demo2.notubiz.accept.mybit.nl/besluitenlijst/273682/Besluitenlijst%3A%20Gemeenteraad%20-%20Ketentest%2011-05-2020</a>]
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                Let ook op dat de volgende onderdelen op deze pagina erbij horen
+                                <br>
+                                &nbsp;# Evenement met media en sprekersindexeringen:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020">https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020</a>]
+                                <br>
+                                &nbsp;# Evenement zonder media:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273530/Test%3A%20Digitaal%20stemmen%2002-04-2020">https://demo2.notubiz.accept.mybit.nl/vergadering/273530/Test%3A%20Digitaal%20stemmen%2002-04-2020</a>]
+                                <br>
+                                &nbsp;# Digitaal stemmen: [<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020">https://demo2.notubiz.accept.mybit.nl/vergadering/273648/Gemeenteraad%20-%20Ketentest%2011-05-2020</a>]
+                                <br>
+                                &nbsp;# Stemmingen:&nbsp;[<a href="https://demo2.notubiz.accept.mybit.nl/vergadering/273530/Test%3A%20Digitaal%20stemmen%2002-04-2020">https://demo2.notubiz.accept.mybit.nl/vergadering/273530/Test%3A%20Digitaal%20stemmen%2002-04-2020</a>]
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                *User Story*
+                                <br>
+
+                                <br>
+                                *Als*&nbsp;NotuBiz
+                                <br>
+
+                                <br>
+                                *Wil ik*&nbsp;dat de evenementen pagina's van Politiek Portaal die toegankelijk is voor het publiek wordt aangepast aan de eisen van digitale toegankelijkheid
+                                <br>
+
+                                <br>
+                                *Zodat*&nbsp;wij&nbsp;voldoen aan de wettelijke eisen en het voor de gebruiker makkelijk toegankelijk is
+                                <br>
+
+                                <br>
+                                &nbsp;
+                                <br>
+
+                                <br>
+                                *Acceptatiecriteria*
+                                <br>
+
+                                <br>
+                                De evenementen die je als burger zijnde in kan zien in het Politiek Portaal (je hoeft zodoende niet ingelogd te zijn) moet aan de volgende criteria voldoen:
+                                <br>
+
+                                <br>
+                                Zowel de pagina's:&nbsp;
+                                <br>
+                                &nbsp;* Geplande agenda
+                                <br>
+                                &nbsp;* Chronologische agenda
+                                <br>
+                                &nbsp;* Besluitenlijst
+                                <br>
+
+                                <br>
+                                +Principe waarneembaar+
+                                <br>
+                                &nbsp;* Richtlijn&nbsp;1.1.1 - Niet tekstuele content (A)
+                                <br>
+                                &nbsp;** Voor verschillende iconen en vormen van grafische weergave wordt geen tekstalternatief geboden waardoor iemand met een voorleesprogramma niet meekrijgt welke informatie wordt geboden.&nbsp;&nbsp;(een 'alt' tekst in de code is nodig)
+                                <br>
+                                &nbsp;* &nbsp;Richtlijn 1.3.1 - Info en relaties (A) icm een Voorleestool
+                                <br>
+                                &nbsp;** Verschillende gevallen waar visuele structuur niet wordt aangegeven in tekst die door voorleessoftware geïnterpreteerd kan worden, waardoor informatie die visueel wordt weergegeven voor blinde gebruikers verloren gaat. Bijvoorbeeld radiobuttons en de tabel in het dashboard. Actie @Mariska Petray: contact opnemen met voorleessoftware Readspeaker :&nbsp;[<a href="https://www.readspeaker.com/nl/solutions/tekst-naar-spraak-voor-online-lezen/readspeaker-webreader/">https://www.readspeaker.com/nl/solutions/tekst-naar-spraak-voor-online-lezen/readspeaker-webreader/</a>]
+                                <br>
+                                &nbsp;* Richtlijn 1.4.4 - Herschalen van tekst (AA)
+                                <br>
+                                &nbsp;** Inzoomen op de pagina tot 200% leidt op verschillende pagina's tot tekst die buiten beeld verdwijnt. Het inzoomen tot 200% zou mogelijk moeten zijn zonder verlies van content of functionaliteit.
+                                <br>
+                                &nbsp;NB: Focus op wat mogelijk is. Indien eea niet realistisch is om te implementeren, andere opties bespreken.
+                                <br>
+
+                                <br>
+                                +Principe Bedienbaar+
+                                <br>
+                                &nbsp;* Middels de 'tab' functie kan een gebruiker door alle functionaliteiten op de pagina genavigeerd kan worden.&nbsp;
+                                <br>
+                                &nbsp;* De 'tab' functie heeft een logische volgorde van navigeren, zodat de gebruiker op een gemakkelijke manier door Politiek Portaal kan navigeren. Dit zonder dat de gebruiker hoeft te zoeken op welke manier hij/zij bepaalde informatie kan openen of functionaliteiten kan bedienen.&nbsp;
+                                <br>
+                                &nbsp;* Duidelijk maken&nbsp;welke focus de 'tab' functionaliteit heeft, zodat een gebruiker op een gebruiksvriendelijke manier door de pagina kan navigeren.
+                                <br>
+                                &nbsp;* Richtlijn 2.1.1 - Toetsenbord
+                                <br>
+                                &nbsp;** Verschillende functionaliteiten op onze pagina's kunnen niet met het toetsenbord bediend worden. Voorbeelden zijn het openen van zoekresultaten en het in- en uitklappen van agendapunten in het digitaal verslag.
+                                <br>
+                                &nbsp;* Richtlijn&nbsp;2.1.2 - Geen toetsenbordval (A)
+                                <br>
+                                &nbsp;** Gebruikers moeten zonder de muis in staat zijn om de pagina te bedienen middels de 'tab' functie. Deze 'tab' functie werkt in Politiek Portaal, maar op enkele plekken wordt de gebruiker verhinderd om van de ene naar de andere knop te bewegen met gebruik van het toetsenbord.
+                                <br>
+
+                                <br>
+                                &nbsp;* Richtlijn 2.4.3 - Focus volgorde (A)
+                                <br>
+                                &nbsp;** Wanneer de pagina middels de 'tab' functie bediend wordt, is de focus volgorde van het bedienen van de knoppen niet altijd logisch. Wanneer bijvoorbeeld het menu onder de knop 'Documenten' geopend is, springt de focus niet eerst naar de onderliggende menukeuze, maar is de focus eerst op andere knoppen binnen Politiek Portaal, waarna de gebruiker middels de 'tab' functie alsnog uitkomt bij de onderdelen uit het menu.
+                                <br>
+
+                                <br>
+                                &nbsp;* Richtlijn 2.4.7 - Focus zichtbaar (AA)
+                                <br>
+                                &nbsp;** Bij het navigeren met de 'tab' functie is op enkele plekken in Politiek Portaal niet zichtbaar op welke knop de focus ligt. Hierdoor ziet een gebruiker niet altijd goed welke knop hij/zij op dat moment bedient. Het tonen van de focus vergroot de gebruiksvriendelijkheid voor alle gebruikers die middels een toetsenbord door de pagina navigeren.
+                                <br>
+
+                                <br>
+                                +Principe Robuust+
+                                <br>
+                                &nbsp;* Richtlijn 4.1.2 - Naam, rol, waarde (A)
+                                <br>
+                                &nbsp;** Deze richtlijn gaat over of het duidelijk is wat de status is van bepaalde ingestelde waarden op de pagina's. Op onze pagina's wordt vaak de status van een toggle niet tekstueel aangegeven. Voorbeelden zijn of iets in- of uitgeklapt is, of recent/toekomst getoond wordt, of het aangeven welke pagina binnen de pagination in het module overzichtsscherm getoond wordt. Op onze pagina's zijn veel gevallen van het niet voldoen aan deze richtlijn.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
